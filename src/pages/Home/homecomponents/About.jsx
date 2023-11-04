@@ -7,8 +7,8 @@ export default function About() {
         <section className='flex flex-col md:flex-row justify-center items-center gap-y-2 my-8'>
             <div className='w-full md:w-1/2 mb-16'>
                 <img className='w-[300px] h-[300] md:w-[460px] md:h-[460px] rounded-md shadow-md' src={about_1} alt="" />
-                <div className='absolute shadow-md'>
-                    <img className='w-[180px] md:w-[325px] h-[180px] md:h-[330px] rounded-md shadow-md border-8 border-white relative bottom-[130px] left-[160px]  md:bottom-[265px] md:left-[180px]' src={about_2} alt="" />
+                <div className='absolute'>
+                    <img className='w-[180px] md:w-[325px] h-[180px] md:h-[330px] rounded-md shadow-md border-8 border-white relative bottom-[130px] left-[160px]  md:bottom-[265px] md:left-[180px] shadow-md' src={about_2} alt="" />
                 </div>
             </div>
             <div className='w-full px-8 md:px-0 md:w-1/2'>
