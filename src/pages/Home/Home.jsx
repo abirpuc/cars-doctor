@@ -3,6 +3,8 @@ import About from './homecomponents/About'
 import Service from './homecomponents/Service'
 import Address from './homecomponents/Address'
 import Product from './homecomponents/Product'
+import Team from './homecomponents/Team'
+import CoreFeature from './homecomponents/CoreFeature'
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
       <Service/>
       <Address/>
       <Product/>
+      <Team/>
+      <CoreFeature/>
     </section>
   )
 }
