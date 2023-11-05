@@ -3,6 +3,7 @@ import SingleBanner from '../../components/Banner/SingleBanner'
 import servicebanner from '../../assets/images/services/4.jpg'
 import serv_1 from '../../assets/images/services/3.jpg'
 import ServiceSectionCard from '../../components/card/ServiceSectionCard'
+import StepsCard from '../../components/card/StepsCard'
 
 export default function Service() {
     return (
@@ -37,8 +38,22 @@ export default function Service() {
                     <div className='my-12'>
                         <h1 className='my-8 text-2xl md:text-4xl text-white'>3 Simple Steps to Process</h1>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
-                        <div>
-                            
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 my-6'>
+                            <StepsCard
+                                step="01"
+                                title ="Step One"
+                                text="It uses a dictionary of over 200 ."
+                            />
+                            <StepsCard
+                                step="02"
+                                title="Step Two"
+                                text="It uses a dictionary of over 200 ."
+                            />
+                            <StepsCard
+                                step="03"
+                                title="Step Three"
+                                text="It uses a dictionary of over 200 ."
+                            />
                         </div>
                     </div>
                 </div>
