@@ -5,6 +5,7 @@ import serv_1 from '../../assets/images/services/3.jpg'
 import ServiceSectionCard from '../../components/card/ServiceSectionCard'
 import StepsCard from '../../components/card/StepsCard'
 import ServiceType from './components/ServiceType'
+import File from './components/File'
 
 export default function Service() {
     return (
@@ -60,6 +61,7 @@ export default function Service() {
                 </div>
                 <div className='w-full px-4 md:px-0 md:w-[30%]'>
                     <ServiceType/>
+                    <File/>
                 </div>
             </div>
         </section>
