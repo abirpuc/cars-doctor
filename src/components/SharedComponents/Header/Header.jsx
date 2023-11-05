@@ -14,7 +14,7 @@ export default function Header() {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
-                                <Link>Home</Link>
+                                <Link to="/">Home</Link>
                             </li>
                             <li>
                                 <Link>About</Link>
@@ -23,10 +23,10 @@ export default function Header() {
                                 <Link>Content</Link>
                             </li>
                             <li>
-                                <Link>Service</Link>
+                                <Link to="/service">Service</Link>
                             </li>
                             <li>
-                                <Link>Blog</Link>
+                                <Link to="/products">Products</Link>
                             </li>
                         </ul>
                     </div>
@@ -35,7 +35,7 @@ export default function Header() {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li>
-                            <Link>Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
                             <Link>About</Link>
@@ -44,11 +44,11 @@ export default function Header() {
                             <Link>Content</Link>
                         </li>
                         <li>
-                            <Link>Service</Link>
-                        </li>
-                        <li>
-                            <Link>Blog</Link>
-                        </li>
+                                <Link to="/service">Service</Link>
+                            </li>
+                            <li>
+                                <Link to="/products">Products</Link>
+                            </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
