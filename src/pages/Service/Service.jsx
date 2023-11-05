@@ -6,6 +6,7 @@ import ServiceSectionCard from '../../components/card/ServiceSectionCard'
 import StepsCard from '../../components/card/StepsCard'
 import ServiceType from './components/ServiceType'
 import File from './components/File'
+import Advertise from './components/Advertise'
 
 export default function Service() {
     return (
@@ -60,8 +61,13 @@ export default function Service() {
                     </div>
                 </div>
                 <div className='w-full px-4 md:px-0 md:w-[30%]'>
-                    <ServiceType/>
-                    <File/>
+                    <ServiceType />
+                    <File />
+                    <Advertise />
+                    <div className='my-12'>
+                        <h1 className='text-2xl md:text-4xl text-white my-4'>Price: $250.00</h1>
+                        <button className='text-white bg-cyan-500 p-2 w-full mt-4'>Process Checkout</button>
+                    </div>
                 </div>
             </div>
         </section>
