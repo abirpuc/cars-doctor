@@ -4,6 +4,7 @@ import servicebanner from '../../assets/images/services/4.jpg'
 import serv_1 from '../../assets/images/services/3.jpg'
 import ServiceSectionCard from '../../components/card/ServiceSectionCard'
 import StepsCard from '../../components/card/StepsCard'
+import ServiceType from './components/ServiceType'
 
 export default function Service() {
     return (
@@ -41,7 +42,7 @@ export default function Service() {
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-4 my-6'>
                             <StepsCard
                                 step="01"
-                                title ="Step One"
+                                title="Step One"
                                 text="It uses a dictionary of over 200 ."
                             />
                             <StepsCard
@@ -58,7 +59,7 @@ export default function Service() {
                     </div>
                 </div>
                 <div className='w-full px-4 md:px-0 md:w-[30%]'>
-                    section -2
+                    <ServiceType/>
                 </div>
             </div>
         </section>
