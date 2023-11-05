@@ -13,8 +13,8 @@ export default function About() {
             </div>
             <div className='w-full px-8 md:px-0 md:w-1/2'>
                 <h4 className='text-xl text-cyan-500'>About Us</h4>
-                <h1 className='text-4xl font-bold my-4 w-1/2 leading-10 text-white'>We are qualified & of experience in this field</h1>
-                <div className='pb-4 w-3/4'>
+                <h1 className='text-4xl font-bold my-4 w-full md:w-1/2 leading-10 text-white'>We are qualified & of experience in this field</h1>
+                <div className='w-full pb-4 md:w-3/4'>
                     <p className='py-4'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
                     <p>the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
                 </div>
