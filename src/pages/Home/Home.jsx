@@ -5,6 +5,7 @@ import Address from './homecomponents/Address'
 import Product from './homecomponents/Product'
 import Team from './homecomponents/Team'
 import CoreFeature from './homecomponents/CoreFeature'
+import Testimonial from './homecomponents/Testimonial'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Product/>
       <Team/>
       <CoreFeature/>
+      <Testimonial/>
     </section>
   )
 }
