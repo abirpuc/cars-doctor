@@ -1,0 +1,51 @@
+import React from 'react'
+import SingleBanner from '../../components/Banner/SingleBanner'
+import servicebanner from '../../assets/images/services/4.jpg'
+import serv_1 from '../../assets/images/services/3.jpg'
+import ServiceSectionCard from '../../components/card/ServiceSectionCard'
+
+export default function Service() {
+    return (
+        <section className='min-h-screen'>
+            <SingleBanner title="Service Details" img={servicebanner} />
+            <div className='flex flex-col md:flex-row justify-start items-start gap-6 my-16'>
+                <div className='w-full px-4 md:px-0 md:w-[70%]'>
+                    <img src={serv_1} className='h-[150px] sm:h-[300px] w-full rounded-md' loading='lazy' alt="" />
+                    <div className='my-12'>
+                        <h1 className='text-2xl mb-8 text-justify md:text-4xl text-white'>Unique Car Engine Service</h1>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+                    </div>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                        <ServiceSectionCard
+                            title="Instant Car Services"
+                            text="It uses a dictionary of over 200 Latin words, combined with a model sentence structures."
+                        />
+                        <ServiceSectionCard
+                            title="24/7 Quality Service"
+                            text="It uses a dictionary of over 200 Latin words, combined with a model sentence structures."
+                        />
+                        <ServiceSectionCard
+                            title="Easy Customer Service"
+                            text="It uses a dictionary of over 200 Latin words, combined with a model sentence structures."
+                        />
+                        <ServiceSectionCard
+                            title="Quality Cost Service"
+                            text="It uses a dictionary of over 200 Latin words, combined with a model sentence structures."
+                        />
+                    </div>
+                    <p className='my-8'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+                    <div className='my-12'>
+                        <h1 className='my-8 text-2xl md:text-4xl text-white'>3 Simple Steps to Process</h1>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                        <div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div className='w-full px-4 md:px-0 md:w-[30%]'>
+                    section -2
+                </div>
+            </div>
+        </section>
+    )
+}

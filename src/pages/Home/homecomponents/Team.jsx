@@ -10,7 +10,7 @@ export default function Team() {
             title="Meet Our Team"
             text="the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "
         />
-        <div>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-4'>
           <PersonCard/>
         </div>
     </section>
