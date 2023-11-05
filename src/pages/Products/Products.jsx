@@ -6,6 +6,10 @@ import Button from '../../components/Button'
 export default function Products() {
     const [productsItem, setProductsItem] = useState(products)
     const [viewProducts, setViewProducts] = useState(6)
+
+    const handleButton=()=>{
+        setViewProducts(viewProducts + 6)
+    }
     return (
         <div className='min-h-screen'>
             <h1 className='text-cyan-600 font-bold text-4xl my-8'>Our All Products</h1>
@@ -14,8 +18,10 @@ export default function Products() {
                     productsItem.slice(0, viewProducts).map(pro => <ProductCard key={pro.id} product={pro} />)
                 }
             </div>
-            <div className='text-center my-8'>
-                <Button />
+            <div className='text-center my-8 mb-12'>
+                {
+                   productsItem.length > viewProducts && productsItem.length >= viewProducts && <Button handleButton={handleButton} name="Show More"/>
+                }
             </div>
         </div>
     )

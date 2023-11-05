@@ -18,7 +18,7 @@ export default function Product() {
                 products.slice(0,6).map(pro =><ProductCard key={pro.id} product={pro}/>)
             }
             </div>
-            <Link to="/products"><Button/></Link>
+            <Link to="/products"><Button name="More Products"/></Link>
         </section>
     )
 }

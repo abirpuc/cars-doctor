@@ -41,24 +41,25 @@ export const products = [
         img:tayer
     },
     {
-        id:6,
+        id:7,
         name:"Car Engin Battery",
         price:"$20.00",
         review: 5,
         img:battery
     },
     {
-        id:6,
+        id:8,
         name:"Car Engin Battery",
         price:"$20.00",
         review: 5,
         img:battery
     },
     {
-        id:6,
+        id:9,
         name:"Car Engin Battery",
         price:"$20.00",
         review: 5,
         img:battery
-    },
+    }
+    
 ]

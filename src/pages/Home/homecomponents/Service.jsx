@@ -7,6 +7,9 @@ import Button from '../../../components/Button'
 export default function Service() {
     const [services, setService] = useState(service)
     const [serviceCount, setServiceCount] = useState(6)
+    const handleButton = () =>{
+       setServiceCount(serviceCount + 3)
+    }
     return (
         <section className='my-[60px]'>
             <SectionHeading
@@ -21,7 +24,8 @@ export default function Service() {
             </div>
             <div className='text-center'>
                 {
-                    services.length > 6 && services.length >= serviceCount  && <Button onClick={()=>setServiceCount(serviceCount + 3)}>More Service</Button>
+                    services.length > serviceCount && services.length >= serviceCount  && 
+                    <Button handleButton={handleButton} name="More Service"></Button>
                 }
                
             </div>
