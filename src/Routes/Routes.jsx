@@ -8,6 +8,7 @@ import AddService from "../pages/AddService/AddService";
 import Login from "../pages/Login/Login";
 import SingUp from "../pages/SingUp/SingUp";
 import Cart from "../pages/Cart/Cart";
+import ManageOrder from "../pages/ManageOrder/ManageOrder";
 
 export const Routes = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ export const Routes = createBrowserRouter([
             {
                 path:'/cart',
                 element:<Cart/>
+            },
+            {
+                path:'/all-order',
+                element:<ManageOrder/>
             }
         ]
     }
