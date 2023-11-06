@@ -7,6 +7,7 @@ import CheckOut from "../pages/CheckOut";
 import AddService from "../pages/AddService/AddService";
 import Login from "../pages/Login/Login";
 import SingUp from "../pages/SingUp/SingUp";
+import Cart from "../pages/Cart/Cart";
 
 export const Routes = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const Routes = createBrowserRouter([
             {
                 path:'/singup',
                 element:<SingUp/>
+            },
+            {
+                path:'/cart',
+                element:<Cart/>
             }
         ]
     }
