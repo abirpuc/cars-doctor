@@ -1,12 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import img from '../../assets/images/login/login.svg'
 import { Link } from 'react-router-dom'
 import {FcGoogle} from 'react-icons/fc'
 import {FaFacebook} from 'react-icons/fa'
+import { AuthContext } from '../../provider/AuthProvider'
 export default function SingUp() {
+
+    const {createUser} = useContext(AuthContext)
+
     const handleSingUp = event => {
         event.preventDefault()
-        console.log("clicked")
+        const form = event.target;
+        
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+        .then(result =>{
+            const user = result.user
+            console.log(user)
+        })
+        .catch((error)=>{
+            console.log(error.message)
+        })
+
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -21,7 +39,7 @@ export default function SingUp() {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="email" placeholder="email" name="name" className="input input-bordered" required />
+                            <input type="text" placeholder="name" name="name" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">

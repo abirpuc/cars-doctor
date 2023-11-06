@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import img from '../../assets/images/login/login.svg'
 import {FaFacebook} from 'react-icons/fa'
 import {FcGoogle} from 'react-icons/fc'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../provider/AuthProvider'
 export default function Login() {
+
+    const {singInUser} = useContext(AuthContext)
+
     const handleLogin = event =>{
         event.preventDefault()
-        console.log("clicked")
+        
+        const form = event.target
+        const email = form.email.value;
+        const password = form.password.value;
+
+        singInUser(email, password)
+        .then(result=>{
+            const user = result.user
+            console.log(user)
+        })
+        .catch(error =>{
+            console.log(error.message)
+        })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
