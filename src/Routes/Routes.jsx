@@ -5,6 +5,8 @@ import Products from "../pages/Products/Products";
 import Service from "../pages/Service/Service";
 import CheckOut from "../pages/CheckOut";
 import AddService from "../pages/AddService/AddService";
+import Login from "../pages/Login/Login";
+import SingUp from "../pages/SingUp/SingUp";
 
 export const Routes = createBrowserRouter([
     {
@@ -30,6 +32,14 @@ export const Routes = createBrowserRouter([
             {
                 path:'/addnewservice',
                 element:<AddService/>
+            },
+            {
+                path:'/login',
+                element:<Login/>
+            },
+            {
+                path:'/singup',
+                element:<SingUp/>
             }
         ]
     }
