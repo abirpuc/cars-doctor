@@ -17,7 +17,7 @@ export default function Header() {
                                 <Link to="/">Home</Link>
                             </li>
                             <li>
-                                <Link>About</Link>
+                                <Link to="/checkout">Order</Link>
                             </li>
                             <li>
                                 <Link>Content</Link>
@@ -38,17 +38,17 @@ export default function Header() {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link>About</Link>
+                            <Link to="/checkout">Order</Link>
                         </li>
                         <li>
                             <Link>Content</Link>
                         </li>
                         <li>
-                                <Link to="/service">Service</Link>
-                            </li>
-                            <li>
-                                <Link to="/products">Products</Link>
-                            </li>
+                            <Link to="/service">Service</Link>
+                        </li>
+                        <li>
+                            <Link to="/products">Products</Link>
+                        </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
