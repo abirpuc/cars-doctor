@@ -16,7 +16,7 @@ export default function CheckOut() {
             img={checkout}
             title="Check Out"
         />
-        <form className="my-12 bg-slate-600 py-16 rounded-lg flex flex-col px-2 md:px-16">
+        <form className="my-12 bg-slate-600 py-16 rounded-lg flex flex-col px-2 md:px-16" onSubmit={handleForm}>
             <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-6 my-4'>
                 <SingleInput placeholder="enter your first name" name="first-name" type="text"/>
                 <SingleInput placeholder="enter your last name" name="last-name" type="text"/>
@@ -26,7 +26,7 @@ export default function CheckOut() {
                 <SingleInput placeholder="enter email" name="email" type="email"/>
             </div>
             <TextArea/>
-            <FormButton name="Place order" handleForm={handleForm}/>
+            <FormButton name="Place order"/>
         </form>
     </section>
   )

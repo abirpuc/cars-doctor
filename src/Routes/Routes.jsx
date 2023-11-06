@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import Products from "../pages/Products/Products";
 import Service from "../pages/Service/Service";
 import CheckOut from "../pages/CheckOut";
+import AddService from "../pages/AddService/AddService";
 
 export const Routes = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const Routes = createBrowserRouter([
             {
                 path:'/checkout',
                 element:<CheckOut/>
+            },
+            {
+                path:'/addnewservice',
+                element:<AddService/>
             }
         ]
     }
