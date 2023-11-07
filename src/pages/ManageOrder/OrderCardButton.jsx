@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function OrderCardButton() {
+    const [buttonText, setButtonText] = useState('Pending')
+
     return (
         // <button className='bg-cyan-500 text-white px-4 py-2 rounded-md'>Pending</button>
-        <ul className="menu bg-cyan-400 text-white rounded-md menu-horizontal px-1">
+        <ul className={`menu bg-cyan-400 text-white rounded-md menu-horizontal px-1 ${buttonText === 'Approved'?'hidden':'visible'}`}>
             <li>
                 <details>
                     <summary>
-                        Approved
+                        {buttonText}
                     </summary>
                     <ul className="p-2 bg-cyan-600 text-white">
-                        <li><a>Approved</a></li>
-                        <li><a>Pending</a></li>
-                        <li><a>Cancel</a></li>
+                        <li onClick={()=>setButtonText('Approved')}><a>Approved</a></li>
+                        <li onClick={()=>setButtonText('Pending')}><a>Pending</a></li>
+                        <li onClick={()=>setButtonText('Cancel')}><a>Cancel</a></li>
                     </ul>
                 </details>
             </li>

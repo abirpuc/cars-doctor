@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import checkout from '../assets/images/checkout/checkout.png'
 import SingleBanner from '../components/Banner/SingleBanner'
 import SingleInput from '../components/form/SingleInput'
 import TextArea from '../components/form/TextArea'
 import FormButton from '../components/form/FormButton'
+import { useLoaderData } from 'react-router-dom'
+import { AuthContext } from '../provider/AuthProvider'
 
 export default function CheckOut() {
+    const {user} = useContext(AuthContext)
     const handleForm = (event) =>{
         event.preventDefault()
         console.log("form btn clicked")
@@ -23,7 +26,7 @@ export default function CheckOut() {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-6'>
                 <SingleInput placeholder="enter phone " name="phone" type="number"/>
-                <SingleInput placeholder="enter email" name="email" type="email"/>
+                <SingleInput placeholder="enter email" defaultValue={user?.email} name="email" type="email"/>
             </div>
             <TextArea/>
             <FormButton name="Place order"/>

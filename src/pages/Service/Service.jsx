@@ -7,8 +7,10 @@ import StepsCard from '../../components/card/StepsCard'
 import ServiceType from './components/ServiceType'
 import File from './components/File'
 import Advertise from './components/Advertise'
+import { useLoaderData } from 'react-router-dom'
 
 export default function Service() {
+    const servicesData = useLoaderData()
     return (
         <section className='min-h-screen'>
             <SingleBanner title="Service Details" img={servicebanner} />
@@ -61,7 +63,7 @@ export default function Service() {
                     </div>
                 </div>
                 <div className='w-full px-4 md:px-0 md:w-[30%]'>
-                    <ServiceType />
+                    <ServiceType serviceData={servicesData}/>
                     <File />
                     <Advertise />
                     <div className='my-12'>

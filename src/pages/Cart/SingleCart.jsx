@@ -1,8 +1,6 @@
 import React from 'react'
 import {RxCross1} from 'react-icons/rx'
-
 import img from '../../assets/images/products/3.png'
-import CardButton from './CardButton'
 
 export default function SingleCart({button}) {
   return (

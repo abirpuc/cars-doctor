@@ -7,6 +7,7 @@ import { AuthContext } from '../../provider/AuthProvider'
 export default function Login() {
 
     const {singInUser} = useContext(AuthContext)
+    const {googleSingIn} = useContext(AuthContext)
 
     const handleLogin = event =>{
         event.preventDefault()
@@ -21,6 +22,17 @@ export default function Login() {
             console.log(user)
         })
         .catch(error =>{
+            console.log(error.message)
+        })
+    }
+
+    const handleGoogleSingIn = ()=>{
+        googleSingIn()
+        .then((result) =>{
+            const user = result.user
+            console.log(user)
+
+        }).catch((error)=>{
             console.log(error.message)
         })
     }
@@ -52,7 +64,7 @@ export default function Login() {
                     <div className='flex flex-col justify-center items-center mb-12'>
                         <p className='text-white text-md mb-4'>or sing-in with</p>
                         <div className='flex justify-center items-center text-3xl gap-4'>
-                            <button><FcGoogle/></button>
+                            <button onClick={handleGoogleSingIn}><FcGoogle/></button>
                             <button><FaFacebook/></button>
                         </div>
                         <p>Have an Account? <Link className='text-xl text-cyan-500' to="/singup">Sing Up</Link></p>

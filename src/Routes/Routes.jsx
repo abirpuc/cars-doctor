@@ -25,10 +25,11 @@ export const Routes = createBrowserRouter([
             },
             {
                 path:'/service',
-                element:<Service/>
+                element:<Service/>,
+                loader:()=>fetch('http://localhost:5000/services')
             },
             {
-                path:'/checkout',
+                path:'/checkout/:id',
                 element:<CheckOut/>
             },
             {
@@ -48,7 +49,7 @@ export const Routes = createBrowserRouter([
                 element:<Cart/>
             },
             {
-                path:'/all-order',
+                path:'/order',
                 element:<ManageOrder/>
             }
         ]

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { FaSearch } from "react-icons/fa";
+import { FaUserAlt, FaUserCheck } from "react-icons/fa";
 import { BsFillBagFill } from "react-icons/bs";
 
 export default function Header() {
@@ -57,7 +57,9 @@ export default function Header() {
                             <BsFillBagFill className='text-xl text-cyan-500' />
                             <p className='w-[20px] h-[20px] rounded-full bg-cyan-800 flex justify-center items-center absolute bottom-2 left-4'>10</p>
                         </Link>
-                        <FaSearch className='text-xl text-cyan-500' />
+                        <Link to="/singup">
+                            <FaUserAlt className='text-xl text-cyan-500' />
+                        </Link>
                         <button className='border border-1 border-cyan-500 p-2 rounded-md text-cyan-600 hover:text-cyan-400'>Appointment</button>
                     </div>
                 </div>
