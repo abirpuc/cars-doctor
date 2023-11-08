@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { FaUserAlt, FaUserCheck } from "react-icons/fa";
 import { BsFillBagFill } from "react-icons/bs";
 
 export default function Header() {
+    const [order, setOrder] = useState(0)
+    useEffect(()=>{
+        fetch('http://localhost:5000/serviceorder')
+        .then(res => res.json())
+        .then(data => setOrder(data))
+    },[])
     return (
         <>
             <div className="navbar bg-base-100 container mx-auto">
@@ -55,7 +61,7 @@ export default function Header() {
                     <div className='mx-2 flex justify-center items-center gap-8'>
                         <Link to="/cart" className='relative'>
                             <BsFillBagFill className='text-xl text-cyan-500' />
-                            <p className='w-[20px] h-[20px] rounded-full bg-cyan-800 flex justify-center items-center absolute bottom-2 left-4'>10</p>
+                            <p className='w-[20px] h-[20px] rounded-full bg-cyan-800 flex justify-center items-center absolute bottom-2 left-4'>{order.length}</p>
                         </Link>
                         <Link to="/singup">
                             <FaUserAlt className='text-xl text-cyan-500' />

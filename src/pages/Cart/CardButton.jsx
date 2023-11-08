@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function CardButton() {
+export default function CardButton({status}) {
   return (
-    <button className='bg-cyan-500 text-white rounded-md p-2'>Pending</button>
+    <button className='bg-cyan-500 text-white rounded-md p-2'>{status}</button>
   )
 }

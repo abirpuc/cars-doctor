@@ -25,12 +25,12 @@ export default function CheckOut() {
         const orderDate = formattedDate
         const message = form.message.value
         const image = img
-        const price = price
+        const productPrice = price
         const status = "pending"
         const serviceName = title
 
         const order = {
-            name, phone, email, orderDate, message, image, price, status, serviceName
+            name, phone, email, orderDate, message, image, productPrice, status, serviceName
         }
 
         fetch('http://localhost:5000/serviceorder', {
@@ -42,7 +42,7 @@ export default function CheckOut() {
         })
             .then(res => res.json())
             .then(data => {
-                if (acknowledged === true) {
+                if (data.acknowledged === true) {
                     const notify = () => toast("Wow so easy!");
                     form.reset()
                 }
