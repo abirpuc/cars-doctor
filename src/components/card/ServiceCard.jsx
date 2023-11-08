@@ -10,7 +10,7 @@ export default function ServiceCard({service}) {
             <p className='text-white font-bold text-lg mt-2'>{service.title}</p>
             <div className='flex justify-between items-center mt-2 mb-[5px] text-cyan-500'>
                 <p>Price:{service.price}</p>
-                <Link to={`checkout/${service.service_id}`}><BsArrowRight/></Link>
+                <Link to={`checkout/${service._id}`}><BsArrowRight/></Link>
             </div>
         </div>
     </div>

@@ -30,7 +30,8 @@ export const Routes = createBrowserRouter([
             },
             {
                 path:'/checkout/:id',
-                element:<CheckOut/>
+                element:<CheckOut/>,
+                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path:'/addnewservice',
@@ -50,7 +51,8 @@ export const Routes = createBrowserRouter([
             },
             {
                 path:'/order',
-                element:<ManageOrder/>
+                element:<ManageOrder/>,
+                loader: () => fetch('http://localhost:5000/serviceorder')
             }
         ]
     }

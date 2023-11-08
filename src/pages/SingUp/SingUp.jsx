@@ -33,7 +33,7 @@ export default function SingUp() {
                     <img src={img} loading='lazy' alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <h1 className='text-4xl font-bold pt-8 pl-12'>Login</h1>
+                    <h1 className='text-4xl font-bold pt-8 pl-12'>Sing Up</h1>
                     <form className="card-body" onSubmit={handleSingUp}>
                         <div className="form-control">
                             <label className="label">
@@ -54,7 +54,7 @@ export default function SingUp() {
                             <input type="password" placeholder="password" name="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Sing Up</button>
                         </div>
                     </form>
                     <div className='flex flex-col justify-center items-center mb-12'>
