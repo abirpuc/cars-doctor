@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import SingleBanner from '../../components/Banner/SingleBanner'
 import img from '../../assets/images/services/5.jpg'
 import SingleCart from '../Cart/SingleCart'
@@ -6,18 +6,26 @@ import OrderCardButton from './OrderCardButton'
 import { useLoaderData } from 'react-router-dom'
 export default function ManageOrder() {
   const order = useLoaderData()
+  const [orders, setOrders] = useState(order)
   const handleOrder = (text, id) => {
-    const updateStatus = { status: text }
+    // const updateStatus = { status: text }
       fetch(`http://localhost:5000/serviceorder/${id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(updateStatus)
+        body: JSON.stringify({status:text})
       })
         .then(res => res.json())
         .then(data => {
-          console.log(data)
+          
+          if(data.modifiedCount > 0){
+            const remaining = orders.filter(ord => ord._id != id)
+            const approving = orders.find(ord => ord._id === id)
+            approving.status = text
+            const approvingOrder = [approving, ...remaining]
+            setOrders(approvingOrder)
+          }
         })                 
   }
   return (
@@ -25,7 +33,7 @@ export default function ManageOrder() {
       <SingleBanner title="Manage All Orders" img={img} />
       <div>
         {
-          order.map(order => <SingleCart key={order._id} order={order}
+          orders.map(order => <SingleCart key={order._id} order={order}
             button={<OrderCardButton handleOrder={handleOrder} id={order._id} status={order.status} />}/>)
         }
       </div>

@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 
 export default function OrderCardButton({ status, id, handleOrder }) {
 
-
     return (
-        <ul className={`menu bg-cyan-400 text-white rounded-md menu-horizontal px-1 ${status === 'Approved' ? 'hidden' : 'visible'}`}>
+        <ul className={`menu bg-cyan-400 text-white rounded-md menu-horizontal px-1 ${status === 'Approved'?'bg-green-500': ''}`}>
             <li>
                 <details>
                     <summary>
@@ -17,5 +16,6 @@ export default function OrderCardButton({ status, id, handleOrder }) {
                 </details>
             </li>
         </ul>
+        // <button className='bg-cyan-500 p-2 rounded-md' onClick={()=>handleOrder(id)}>{status}</button>
     )
 }
