@@ -16,6 +16,5 @@ export default function OrderCardButton({ status, id, handleOrder }) {
                 </details>
             </li>
         </ul>
-        // <button className='bg-cyan-500 p-2 rounded-md' onClick={()=>handleOrder(id)}>{status}</button>
     )
 }

@@ -1,17 +1,34 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaUserAlt, FaUserCheck } from "react-icons/fa";
 import { BsFillBagFill } from "react-icons/bs";
+import { FiLogOut } from "react-icons/fi";
 import { AuthContext } from '../../../provider/AuthProvider';
 
 export default function Header() {
     const [order, setOrder] = useState(0)
-    const {user} = useContext(AuthContext)
+    const { user, logout } = useContext(AuthContext)
     useEffect(() => {
         fetch('http://localhost:5000/serviceorder')
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [])
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/order?email=${user?.email}`)
+        .then(res => res.json())
+        .then(data =>{
+            setOrder(data)
+        })
+    },[user?.email])
+
+    const handleSingOut = () =>{
+        logout()
+        .then()
+        .catch(error =>{
+            console.log(error)
+        })
+    }
     return (
         <>
             <div className="navbar bg-base-100 container mx-auto">
@@ -22,19 +39,21 @@ export default function Header() {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
-                                <Link to="/">Home</Link>
+                                <NavLink exact activeClassName="active" to="/">Home</NavLink>
+                            </li>
+                            {
+                                user?.email && <li>
+                                    <NavLink activeClassName="active" to="/order">Order</NavLink>
+                                </li>
+                            }
+                            {/* <li>
+                                <NavLink>Content</NavLink>
+                            </li> */}
+                            <li>
+                                <NavLink activeClassName="active" to="/service">Service</NavLink>
                             </li>
                             <li>
-                                <Link to="/order">Order</Link>
-                            </li>
-                            <li>
-                                <Link>Content</Link>
-                            </li>
-                            <li>
-                                <Link to="/service">Service</Link>
-                            </li>
-                            <li>
-                                <Link to="/products">Products</Link>
+                                <NavLink activeClassName="active" to="/products">Products</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -43,41 +62,46 @@ export default function Header() {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li>
-                            <Link to="/">Home</Link>
+                            <NavLink exact activeClassName="active" to="/">Home</NavLink>
                         </li>
                         {
                             user?.email && <li>
-                                <Link to="/order">Order</Link>
+                                <NavLink activeClassName="active" to="/order">Order</NavLink>
                             </li>
                         }
+                        {/* <li>
+                            <NavLink to="/content" activeClassName="active">Content</NavLink>
+                        </li> */}
                         <li>
-                            <Link>Content</Link>
+                            <NavLink activeClassName="active" to="/service">Service</NavLink>
                         </li>
                         <li>
-                            <Link to="/service">Service</Link>
-                        </li>
-                        <li>
-                            <Link to="/products">Products</Link>
+                            <NavLink activeClassName="active" to="/products">Products</NavLink>
                         </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <div className='mx-2 flex justify-center items-center gap-8'>
                         {
-                            user?.email && <Link to="/cart" className='relative'>
+                            user?.email && <NavLink to="/cart" activeClassName="active" className='relative'>
                                 <BsFillBagFill className='text-xl text-cyan-500' />
                                 <p className='w-[20px] h-[20px] rounded-full bg-cyan-800 flex justify-center items-center absolute bottom-2 left-4'>{order.length}</p>
-                            </Link>
+                            </NavLink>
                         }
                         {
                             user?.email ?
-                                <Link to="/login">
-                                    <FaUserCheck className='text-xl text-cyan-500' />
-                                </Link> :
-                                <Link to="/singup">
+                                <>
+                                    <NavLink to="/login">
+                                        <FaUserCheck className='text-xl text-cyan-500' />
+                                    </NavLink>
+                                    <NavLink >
+                                        <FiLogOut onClick={handleSingOut} className='text-xl text-cyan-500' />
+                                    </NavLink>
+                                </>
+                                :
+                                <NavLink to="/login">
                                     <FaUserAlt className='text-xl text-cyan-500' />
-                                </Link>
-
+                                </NavLink>
                         }
                         <button className='border border-1 border-cyan-500 p-2 rounded-md text-cyan-600 hover:text-cyan-400'>Appointment</button>
                     </div>

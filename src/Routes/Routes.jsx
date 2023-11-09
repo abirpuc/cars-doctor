@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import SingUp from "../pages/SingUp/SingUp";
 import Cart from "../pages/Cart/Cart";
 import ManageOrder from "../pages/ManageOrder/ManageOrder";
+import PrivateRouter from "./PrivateRouter/PrivateRouter";
 
 export const Routes = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ export const Routes = createBrowserRouter([
             },
             {
                 path:'/checkout/:id',
-                element:<CheckOut/>,
+                element:<PrivateRouter><CheckOut/></PrivateRouter>,
                 loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
             },
             {

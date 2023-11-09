@@ -2,12 +2,16 @@ import React, { useContext } from 'react'
 import img from '../../assets/images/login/login.svg'
 import {FaFacebook} from 'react-icons/fa'
 import {FcGoogle} from 'react-icons/fc'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../provider/AuthProvider'
 export default function Login() {
 
     const {singInUser} = useContext(AuthContext)
     const {googleSingIn} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate  = useNavigate()
+
+    let from = location.state?.from?.pathname || "/"
 
     const handleLogin = event =>{
         event.preventDefault()
@@ -20,6 +24,7 @@ export default function Login() {
         .then(result=>{
             const user = result.user
             console.log(user)
+            navigate(from, { replace: true });
         })
         .catch(error =>{
             console.log(error.message)
@@ -30,7 +35,7 @@ export default function Login() {
         googleSingIn()
         .then((result) =>{
             const user = result.user
-            console.log(user)
+            navigate(from, { replace: true });
 
         }).catch((error)=>{
             console.log(error.message)
